@@ -1,0 +1,19 @@
+application: handshake-hack
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+handlers:
+
+# Static files
+- url: /(.*\.(gif|png|jpg|css|js|html))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg|css|js|html)$
+
+# AngularJS app stub
+- url: /.*
+  static_files: static/index.html
+  upload: static/index.html
+  secure: always
