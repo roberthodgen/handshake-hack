@@ -33,7 +33,7 @@ class UploadHandler(blobstore_handlers.BlobstoreUploadHandler):
             method=urlfetch.POST,
             headers={'Content-Type': 'application/json',
                 'X-Parse-Application-Id': 'Aw2wgeVa9ihzU3OqRggicJ2rcFoQFxQYIWDhnaFR',
-                'X-Parse-REST-API-Key': '**REST API KEY HERE**'
+                'X-Parse-REST-API-Key': 'TWEMo9AIIRXCUCfesvRI49Q4mqPM7Zw5muXW239G'
             })
         # print json.dumps(result)
         print result.content
