@@ -12,7 +12,7 @@ import json
 class UploadHandler(blobstore_handlers.BlobstoreUploadHandler):
     def get(self):
         """ Return an upload URL. """
-        upload_url = blobstore.create_upload_url('/', gs_bucket_name='handshake-resume-cnd/resumes/')
+        upload_url = blobstore.create_upload_url('/upload', gs_bucket_name='handshake-resume-cnd/resumes/')
         response_object = {}
         response_object['upload_url']= upload_url
         self.response.content_type = 'application/json'
