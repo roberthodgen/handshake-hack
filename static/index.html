@@ -121,10 +121,20 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h1>- Job Seekers -</h1><h2>Upload Your Resume</h2>
                 <form>
-                    <br><p>Input your current username or a new one if you don't have one yet:</p><input type="text" value="Username" id="username"><br><br><br>
-                    <input type="button" class="btn btn-default btn-lg" value="Upload Resume"></input>
+                    <br><p>Input your current username or a new one if you don't have one yet:</p>
+                    <input type="text" id="username"><br><br><br>
+                    <style>
+                      #username {
+                        color: black;
+                      }
+                      #username::selection {
+                        color: white;
+                        background: black;
+                      }
+                    </style>
+                    <input type="button" class="btn btn-default btn-lg" value="Upload Resume" onclick="uploadResume()"></input>
                     <br><br>
-                    <input type="submit" class="btn btn-default btn-lg" value="Submit"></input>
+                    <input type="button" class="btn btn-default btn-lg" value="Submit" onclick="submitReq()"></input>
                 </form>
             </div>
         </div>
@@ -177,6 +187,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+
+    <script src="js/resume_upload.js"></script>
 
 </body>
 
