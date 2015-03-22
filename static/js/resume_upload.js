@@ -23,7 +23,7 @@ function submitReq() {
               var JobSeeker = Parse.Object.extend("JobSeeker");
               var jobSeeker = new JobSeeker();
               console.log("Error, Problem");
-              jobSeeker.save({username: userName}).then(function(object) {
+              jobSeeker.save({username: userName, resume: 'myurl'}).then(function(object) {
                 alert("Successfully uploaded your resume.");
               });
             } else {
@@ -37,3 +37,15 @@ function submitReq() {
     });
   }
 }
+
+$(document).ready(function() {
+  $.ajax({
+    method: 'GET',
+    url: '/upload',
+    dataType: 'json'
+  }).done(function(data) {
+    if (data.hasOwnProperty('upload_url')) {
+      $('#upload-form').attr('action', data.upload_url);
+    }
+  })
+})
