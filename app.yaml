@@ -10,6 +10,10 @@ handlers:
 - url: /upload
   script: files.app
 
+- url: /files/.*
+  script: files.app
+  secure: always
+
 # Static files
 - url: /(.*\.(gif|png|jpg|css|js|html))$
   static_files: static/\1
