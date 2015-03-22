@@ -51,8 +51,9 @@ class DownloadHandler(blobstore_handlers.BlobstoreDownloadHandler):
             abort(400)
 
         blob_info = blobstore.BlobInfo.get(fileId)
-        # self.send_blob(blob_info)  # For some reason this wasn't working
-        self.redirect(get_serving_url(blob_info.key()))  # Isntead we'll redirect to a serving link
+        self.response.headers.add('Content-Disposition', str(''.join(['attachment; filename="', blob_info.filename, '"'])))
+        self.send_blob(blob_info)  # For some reason this wasn't working
+        # self.redirect(get_serving_url(blob_info.key()))  # Isntead we'll redirect to a serving link
 
 
 app = webapp2.WSGIApplication([
